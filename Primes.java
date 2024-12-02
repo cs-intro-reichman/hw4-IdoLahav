@@ -37,12 +37,12 @@ public class Primes {
             }
             double avg = (countPrimes / n) * 100;
             if (countPrimes == 1){
-                System.out.println("There is " + (int)countPrimes + " prime between 2 and " + n + ". (" + (int)avg * 2 + "% are primes)");
+                System.out.println("There is " + (int)countPrimes + " prime between 2 and " + n + " (" + (int)avg * 2 + "% are primes)");
             } else {
-                System.out.println("There are " + (int)countPrimes + " primes between 2 and " + n + ". (" + (int)avg + "% are primes)");
+                System.out.println("There are " + (int)countPrimes + " primes between 2 and " + n + " (" + (int)avg + "% are primes)");
             }
         } else {
-            System.out.println("There are no primes numbers up to " + n + ". (0% are primes)");
+            System.out.println("There are no primes numbers up to " + n + " (0% are primes)");
         }
     }
 }
