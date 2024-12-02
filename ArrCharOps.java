@@ -14,7 +14,7 @@ public class ArrCharOps {
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
+        System.out.println(compareTo("", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
         System.out.println(compareTo("Abcd", "a"));
@@ -203,6 +203,7 @@ public class ArrCharOps {
                 }
             }
             return -1;
+            
         } else if (str1.length() > str2.length()){
             for (int i = 0; i < str2.length();i++){
                 if (str1.charAt(i) != str2.charAt(i)){
