@@ -47,6 +47,9 @@ public class MyString {
                     String tester = "";
                     int index = i;
                     for (int j = 0; j < str2.length(); j++){
+                        if (index == str1.length()){
+                            return false;
+                        }
                         tester += str1.charAt(index);
                         index++;
                     }
