@@ -48,7 +48,7 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        //boolean flag = false;
+
         if (arr1.length == arr2.length){
             for (int i = 0; i < arr1.length; i++) {
                 if (charAt(arr1, i) != charAt(arr2, i)){
@@ -175,10 +175,11 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        str1 = lowerCase(str1);
-        str2 = lowerCase(str2);
+        if (str1 == "" || str2 == ""){
+            return -2;
+        } 
 
-        if (str1.length() == str2.length()){ // same length
+        if (str1.length() == str2.length()){ 
 
             for (int i = 0; i < str1.length();i++){
                 if (str1.charAt(i) != str2.charAt(i)){
@@ -217,32 +218,7 @@ public class ArrCharOps {
             }
             return 1;
         }
-
+    
         return -2;
-    }
-
-    public static String preProcess(String str) {
-        String newStr = "";
-        for (int i = 0; i < str.length(); i++){
-           if (str.charAt(i) >= 65 && str.charAt(i) <= 90){
-              newStr += (char)(str.charAt(i) + 32);
-           }
-           if (str.charAt(i) >= 97 && str.charAt(i) <= 122){
-              newStr += str.charAt(i);
-           }
-        }
-        return newStr;
-     } 
-
-     public static String lowerCase(String str) {
-        String newStr = "";
-        for (int i = 0; i < str.length(); i++){
-           if (str.charAt(i) >= 65 && str.charAt(i) <= 90){
-              newStr += (char)(str.charAt(i) + 32);
-           } else{
-            newStr += str.charAt(i);
-           }
-        }
-        return newStr;
     }
 }
