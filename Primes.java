@@ -29,6 +29,7 @@ public class Primes {
             }     
 
             double countPrimes = 0;
+            System.out.println("Prime numbers up to " + n + ":");
             for (int j = 0; j < arr.length; j++){
                 if (arr[j]){
                 System.out.println(j);
