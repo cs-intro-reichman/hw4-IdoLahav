@@ -38,12 +38,12 @@ public class Primes {
             }
             double precentage = (countPrimes / n) * 100;
             if (countPrimes == 1){
-                System.out.println("There are " + (int)countPrimes + " primes between 2 and " + n + " (" + (int)precentage * 2 + "% are primes)");
+                System.out.println("There is " + (int)countPrimes + " prime between 2 and " + n + " (" + (int)precentage * 2 + "% are primes)");
             } else {
                 System.out.println("There are " + (int)countPrimes + " primes between 2 and " + n + " (" + (int)precentage + "% are primes)");
             }
         } else {
-            System.out.println("There are " + 0 + " primes between and " + n + " (" + 0 + "% are primes)");
+            System.out.println("There are 0 primes up to " + n + " (0% are primes)");
         }
     }
 }

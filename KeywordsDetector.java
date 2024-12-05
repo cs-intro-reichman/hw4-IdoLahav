@@ -23,7 +23,7 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++){
             for (int j = 0; j < keywords.length; j++){
-                if (contains(sentences[i].toLowerCase(), keywords[j].toLowerCase())){
+                if (contains(lowerCase(sentences[i]), lowerCase(keywords[j]))){
                     System.out.println(sentences[i]);
                     break;
                 }
@@ -31,39 +31,52 @@ public class KeywordsDetector {
         }
     }
 
-        /** If str1 contains str2, returns true; otherwise returns false. */
-        public static boolean contains(String str1, String str2) {
-            if (str2.isEmpty()){
-                return true;
-            }
+        
+    public static String lowerCase(String str) {
+        String newStr = "";
+        for (int i = 0; i < str.length(); i++){
+           if (str.charAt(i) >= 65 && str.charAt(i) <= 90){
+              newStr += (char)(str.charAt(i) + 32);
+           } else{
+            newStr += str.charAt(i);
+           }
+        }
+        return newStr;
+    }
     
-            if (str1.length() < str2.length()){
-                return false;
-            }
-    
-            if (str1.length() > str2.length()){
-                
-                for (int i = 0; i < str1.length() - str2.length(); i++){
-                    int index = i;
-                    if (str1.charAt(i) == str2.charAt(0)){
-                        String tester = "";
-                        
-                        for (int j = 0; j < str2.length(); j++){
-                            tester += str1.charAt(index);
-                            index++;
-                            if (index > str1.length()) {
-                                break;
-                            }
-                        }
-    
-                        if (tester.equals(str2)){
-                            return true;
-                        }
-                    }
-                }
-            } 
-            
+    /** If str1 contains str2, returns true; otherwise returns false. */
+    public static boolean contains(String str1, String str2) {
+        if (str2.isEmpty()){
+            return true;
+        }
+
+        if (str1.length() < str2.length()){
             return false;
         }
+
+        if (str1.length() > str2.length()){
+            
+            for (int i = 0; i < str1.length() - str2.length(); i++){
+                int index = i;
+                if (str1.charAt(i) == str2.charAt(0)){
+                    String tester = "";
+                    
+                    for (int j = 0; j < str2.length(); j++){
+                        tester += str1.charAt(index);
+                        index++;
+                        if (index > str1.length()) {
+                            break;
+                        }
+                    }
+
+                    if (tester.equals(str2)){
+                        return true;
+                    }
+                }
+            }
+        } 
+        
+        return false;
+    }
 
 }
